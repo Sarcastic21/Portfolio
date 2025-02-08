@@ -151,13 +151,13 @@ function HomePage() {
   
   {/* Social Links */}
   <div className="social-links">
-    <a href="https://www.linkedin.com/in/ayush-maurya/" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.linkedin.com/in/ayush-maurya-219611342" target="_blank" rel="noopener noreferrer">
       <img src="https://imgs.search.brave.com/iGQSJlGewUe5iDIy6aga0Dgqn-JL0RFJpUkb2RyRw5w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bG9nb2pveS5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjQw/NjA3MTExODA2L2xp/bmtlZGluLWxvZ28t/bW9ub2dyYW0tNjAw/eDQ1MC5qcGc" alt="LinkedIn" className="social-icon" />
     </a>
-    <a href="https://leetcode.com/ayushmaurya/" target="_blank" rel="noopener noreferrer">
+    <a href="https://leetcode.com/u/Ayushmaurya21" target="_blank" rel="noopener noreferrer">
       <img src="https://imgs.search.brave.com/kJptFW-S1iOjZGFk_giKuuiVvzCCqE-xXGbppkdfqis/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5wbmdhYWEuY29t/LzExOC80ODY4MTE4/LW1pZGRsZS5wbmc" alt="LeetCode" className="social-icon" />
     </a>
-    <a href="https://github.com/ayushmaurya" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/Sarcastic21" target="_blank" rel="noopener noreferrer">
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" className="social-icon" />
     </a>
   </div>
