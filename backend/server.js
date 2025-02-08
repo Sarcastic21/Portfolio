@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 // Hardcoded allowed origins for CORS
-const allowedOrigins = ["http://localhost:3000", "https://your-frontend-domain.com"];
+const allowedOrigins = ["http://localhost:3000", "https://portfolio-a5tp.vercel.app"];
 
 const corsOptions = {
   origin: allowedOrigins,
