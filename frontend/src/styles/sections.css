@@ -118,50 +118,51 @@
     background-color: #2a6ab3;
   }
   
-  /* Contacts Section Styling */
-  ul.ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-  }
-  
-  ul.ul li {
-    margin-bottom: 5vh;
+/* Contacts Section Styling */
+ul.ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  max-width: 100%; /* Ensures the ul stays within the parent container */
+  overflow: hidden; /* Prevents overflow issues */
+}
 
-    background-color: #222;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  ul.ul li:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Contact Card Borders and Text Styling */
-  ul.ul li p {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: white;
-  }
-  
+ul.ul li {
+  background: linear-gradient(135deg, #4c6ef5, #f06292);
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  word-wrap: break-word; /* Ensures long words break correctly */
+  overflow: hidden; /* Prevents text overflow */
+  text-align: center; /* Centers the text inside the li */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul.ul li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+ul.ul li p {
+  font-size: 1rem; /* Adjusted for better scaling on smaller screens */
+  margin: 10px 0;
+  line-height: 1.5; /* Improves readability */
+  word-break: break-word; /* Ensures text doesn't overflow */
+}
+
+/* Ensures the list and items adjust properly for very small screens */
+@media (max-width: 480px) {
   ul.ul li {
-    background: linear-gradient(135deg, #4c6ef5, #f06292);
-    color: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
+    font-size: 0.9rem; /* Adjust text size on small devices */
+    padding: 15px; /* Slightly reduces padding */
   }
-  
-  ul.ul li p {
-    margin: 10px 0;
-  }
+}
+
   
   /* Hover Effect for Contact Cards */
   ul.ul li:hover {
