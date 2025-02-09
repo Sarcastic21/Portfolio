@@ -29,7 +29,7 @@ const handleSubmit = (e) => {
 // Fetch contacts when the component is mounted
 useEffect(() => {
   if (isLoggedIn) {
-    fetch(`${API_URL}/contacts`)
+    fetch(`${API_URL}/api/contacts`)
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched contacts:", data); // Log data
