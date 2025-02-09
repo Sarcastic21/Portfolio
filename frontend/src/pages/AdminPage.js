@@ -11,44 +11,46 @@ function AdminPage() {
   const [password, setPassword] = useState(""); // Password input state
   const [loginError, setLoginError] = useState(""); // Track login error message
 
-  // Hardcoded credentials
-  const hardcodedUsername = "admin";
-  const hardcodedPassword = "password123";
+ // Access environment variables
+const API_URL = process.env.REACT_APP_API_URL;
+const ADMIN_USERNAME = process.env.REACT_APP_USERNAME;
+const ADMIN_PASSWORD = process.env.REACT_APP_PASSWORD;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch("http://localhost:5000/api/projects", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    })
+const handleSubmit = (e) => {
+  e.preventDefault();
+  fetch(`${API_URL}/api/projects`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(form),
+  })
+    .then((res) => res.json())
+    .then(() => alert("Project Added!"));
+};
+
+// Fetch contacts when the component is mounted
+useEffect(() => {
+  if (isLoggedIn) {
+    fetch(`${API_URL}/contacts`)
       .then((res) => res.json())
-      .then(() => alert("Project Added!"));
-  };
+      .then((data) => {
+        console.log("Fetched contacts:", data); // Log data
+        setContacts(data); // Store the contact data
+      })
+      .catch((err) => console.error("Error fetching contacts:", err));
+  }
+}, [isLoggedIn]); // Only fetch contacts if logged in
 
-  // Fetch contacts when the component is mounted
-  useEffect(() => {
-    if (isLoggedIn) {
-      fetch("http://localhost:5000/contacts")
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("Fetched contacts:", data); // Log data
-          setContacts(data); // Store the contact data
-        })
-        .catch((err) => console.error("Error fetching contacts:", err));
-    }
-  }, [isLoggedIn]); // Only fetch contacts if logged in
+// Handle login
+const handleLogin = (e) => {
+  e.preventDefault();
+  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+    setIsLoggedIn(true);
+    setLoginError(""); // Clear any previous error
+  } else {
+    setLoginError("Invalid username or password");
+  }
+};
 
-  // Handle login
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (username === hardcodedUsername && password === hardcodedPassword) {
-      setIsLoggedIn(true);
-      setLoginError(""); // Clear any previous error
-    } else {
-      setLoginError("Invalid username or password");
-    }
-  };
 
   // Render login form or the Admin Page based on login status
   return (
