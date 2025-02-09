@@ -10,8 +10,7 @@ function AdminPage() {
   const [username, setUsername] = useState(""); // Username input state
   const [password, setPassword] = useState(""); // Password input state
   const [loginError, setLoginError] = useState(""); // Track login error message
-
- // Access environment variables
+// Access environment variables
 const API_URL = process.env.REACT_APP_API_URL;
 const ADMIN_USERNAME = process.env.REACT_APP_USERNAME;
 const ADMIN_PASSWORD = process.env.REACT_APP_PASSWORD;
@@ -38,7 +37,7 @@ useEffect(() => {
       })
       .catch((err) => console.error("Error fetching contacts:", err));
   }
-}, [isLoggedIn]); // Only fetch contacts if logged in
+}, [isLoggedIn, API_URL]); // Include API_URL in the dependency array
 
 // Handle login
 const handleLogin = (e) => {
