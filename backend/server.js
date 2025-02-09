@@ -22,7 +22,6 @@ const corsOptions = {
 // Middleware
 app.use(cors(corsOptions)); // Use CORS with options
 app.use(express.json());
-app.use(contactRoutes);
 
 // MongoDB Connection
 mongoose
@@ -35,6 +34,7 @@ mongoose
 
 // Routes
 app.use("/api/projects", adminRoutes);
+app.use("/api", contactRoutes);
 
 // Server Listening
 const PORT = process.env.PORT || 5000;
